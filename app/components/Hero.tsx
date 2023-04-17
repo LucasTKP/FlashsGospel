@@ -3,8 +3,6 @@ import { Header } from './Header'
 import Image from 'next/image'
 import { urlFor } from '@/lib/sanity'
 
-import Square from '@/public/square.svg'
-import Arrow from '@/public/arrow.svg'
 import Quotes from '@/public/quotes.svg'
 
 async function getHeroDatas() {
