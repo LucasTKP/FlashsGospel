@@ -1,6 +1,16 @@
 import { Hero, Partners, Gallery, Jornal, Footer } from "./components"
+import { client } from '@/lib/sanity'
+
+async function getGalleryAndJornalContents() {
+  const galleryData: object = await client.fetch(`*[_type == "galeria"]`)
+  const jornalData: object = await client.fetch(`*[_type == "jornal"]`)
+
+  return {galleryData, jornalData}
+}
 
 export default async function Home() {
+  const {galleryData, jornalData} = await getGalleryAndJornalContents()
+
   return (
     <>
     {/* @ts-expect-error Async Server Component */}
@@ -9,11 +19,9 @@ export default async function Home() {
     {/* @ts-expect-error Async Server Component */}
       <Partners />
 
-    {/* @ts-expect-error Async Server Component */}
-      <Gallery />
+      <Gallery props={galleryData}/>
 
-    {/* @ts-expect-error Async Server Component */}
-      <Jornal />
+      <Jornal props={jornalData}/>
 
     {/* @ts-expect-error Async Server Component */}
       <Footer />

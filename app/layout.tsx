@@ -22,7 +22,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
       <head />
-      <body>{children}</body>
+      <body>{children}
+      </body>
     </html>
   )
 }

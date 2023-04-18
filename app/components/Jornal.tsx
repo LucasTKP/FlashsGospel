@@ -1,14 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import { client } from '@/lib/sanity'
 import { urlFor } from '@/lib/sanity'
 
-async function getJornalDatas() {
-    return await client.fetch(`*[_type == "jornal"]`)
-}
-
-export default async function Jornal() {
-    const jornalData = await getJornalDatas()
+export default function Jornal({props}: any) {
+    const jornalData = props
     
     return (
         <div id={'jornal'} className="w-full lg:container mx-auto mt-10 px-4 max-md:px-1">
