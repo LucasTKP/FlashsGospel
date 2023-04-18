@@ -3,13 +3,28 @@
 import { urlFor } from '@/lib/sanity'
 import Image from 'next/image'
 import { ImageAsset } from 'sanity';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { client } from '@/lib/sanity'
 
 export function Header({logo}: ImageAsset | any) {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
+    const [link, setLinks] = useState([{
+        link_instagram: '',
+        link_facebook: '',
+        numero_whatsapp: ''
+    }])
+
+    useEffect(() => {
+        async function getLinks() {
+            const res = await client.fetch(`*[_type == "contato"]`)
+            setLinks(res)
+        }
+
+        getLinks()
+    }, [])
 
     return (
-        <header className='flex justify-between py-8 container mx-auto items-center px-5'>
+        <header className={`flex justify-between py-8 container mx-auto items-center px-5`}>
             <div className='mx-auto pl-4'>
                 <Image src={urlFor(logo).url()} alt='logo' width={100} height={100} className='max-sm:w-[80px] max-sm:h-[80px]'></Image>
             </div>
@@ -25,9 +40,9 @@ export function Header({logo}: ImageAsset | any) {
                     <li><a href="#" className='text-[24px] font-medium border-b-2 border-yellow-600/50 cursor-pointer py-2 px-2 duration-100 block relative before:w-0 before:h-full before:bg-yellow-500/20 before:absolute before:left-0 before:top-0 hover:before:w-full before:duration-500 before:ease-in-out'>Jornal</a></li>
                 </ul>
                 <ul className='mt-20 flex gap-10 max-w-[1200px] mx-auto max-xs:flex-col max-xs:gap-5'>
-                    <li><a href="#" className='text-[18px] text-yellow-700/80 font-medium hover:text-yellow-700/50 duration-100'>Instagram</a></li>
-                    <li><a href="#" className='text-[18px] text-yellow-700/80 font-medium hover:text-yellow-700/50 duration-100'>Facebook</a></li>
-                    <li><a href="#" className='text-[18px] text-yellow-700/80 font-medium hover:text-yellow-700/50 duration-100'>WhatsApp</a></li>
+                    <li><a target='__blank' href={link[0].link_instagram} className='text-[18px] text-yellow-700/80 font-medium hover:text-yellow-700/50 duration-100'>Instagram</a></li>
+                    <li><a target='__blank' href={link[0].link_facebook} className='text-[18px] text-yellow-700/80 font-medium hover:text-yellow-700/50 duration-100'>Facebook</a></li>
+                    <li><a target='__blank' href={`https://wa.me/${link[0].numero_whatsapp.replace(/\s/g, "")}`} className='text-[18px] text-yellow-700/80 font-medium hover:text-yellow-700/50 duration-100'>WhatsApp</a></li>
                 </ul>
             </div>
         </header>

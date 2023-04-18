@@ -22,6 +22,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-square': "url('../public/square.svg')",
+        'footer-background': "url('../public/footer.svg')",
       }
     },
   },
