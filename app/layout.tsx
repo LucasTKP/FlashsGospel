@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
+    <html lang="pt-BR" className={`scroll-smooth ${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
       <head />
       <body>{children}
       </body>

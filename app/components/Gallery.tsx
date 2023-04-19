@@ -19,10 +19,10 @@ export default function Gallery({props}: any) {
           return (
             <div key={index}>
                <div className="flex gap-5 items-center px-20 my-6">
-               <Image src={urlFor(post.imagens[0]).url()} alt="Gallery images" width={200} height={500} className={`${index == indexActive ? 'w-full ' : 'min-w-[200px] h-[180px]'} rounded-sm object-none`}></Image>
+               <Image src={urlFor(post.imagens[0]).url()} alt="Gallery images" width={281} height={500} className={`aspect-[9/16] ${index == indexActive ? 'w-full ' : 'min-w-[200px] h-[180px]'} rounded-sm object-none `} />
                <div>
                   <h3 className="text-[24px] font-medium my-2">{post.titulo}</h3>
-                  <p className="text-[18px] max-w-[400">{index == indexActive  ? post.texto : post.texto.substring(0, 400)}... <button className={`text-yellow-500 font-medium underline ${index == indexActive ? 'hidden' : ''}`} onClick={() => setIndexActive(index)}>Ver mais</button></p>
+                  <p className="text-[18px]">{index == indexActive  ? post.texto : post.texto.substring(0, 400)}... <button className={`text-yellow-500 font-medium underline ${index == indexActive ? 'hidden' : ''}`} onClick={() => setIndexActive(index)}>Ver mais</button></p>
                 </div>
               </div>
 
