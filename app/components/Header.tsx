@@ -1,6 +1,5 @@
 'use client'
 
-
 import { urlFor } from '@/lib/sanity'
 import Image from 'next/image'
 import { ImageAsset } from 'sanity';

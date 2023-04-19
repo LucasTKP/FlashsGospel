@@ -9,7 +9,6 @@ async function getHeroDatas() {
     return await client.fetch(`*[_type == "hero"]`)
 }
 
-
 export default async function Hero() {
     const heroData = await getHeroDatas()
 
