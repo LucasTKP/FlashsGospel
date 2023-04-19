@@ -9,11 +9,10 @@ function Carrossel({imagens, videos}:any) {
   const [content, setContent] = useState<any>()
   const [width, setWidth] = useState<number>(1000);
   const Ref1 = useRef<HTMLDivElement>(null)
-  const [load, setLoad] = useState(true)
 
   useEffect(() =>{
     const allContent = []
-    for(var i = 0; i < videos.length; i ++){
+    for(var i = 0; i < videos?.length; i ++){
       var url = videos[i].split('=')
       url = 'https://www.youtube.com/embed/' + url.pop()
       const data = {
@@ -23,10 +22,10 @@ function Carrossel({imagens, videos}:any) {
       allContent.push(data)
     }
 
-    for(var i = 0; i < imagens.length; i ++){
+    for(var i = 0; i < imagens?.length; i ++){
       allContent.push(imagens[i])
     }
-    setLoad(false)
+
     setContent(allContent)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
@@ -61,7 +60,6 @@ function Carrossel({imagens, videos}:any) {
       <div ref={Ref1} className='group max-w-[900px] max-h-[450px] w-full h-full bg-black flex items-center justify-between relative select-none user-select-none overflow-x-hidden aspect-video'>
         {content?.map((content:any, index:number) => {
           if(content.type === 'video'){
-
             return (
               <div key={index} className={`z-10 absolute w-full h-full right-0 left-0  duration-500`} style={{left:index === numberCarrossel ? '' : index < numberCarrossel ? -width : width}}>
                 <iframe width="100%" height="100%" src={content.url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
