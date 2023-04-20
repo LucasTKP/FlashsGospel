@@ -9,6 +9,21 @@ export const newsPaper = {
         title: 'Título'
       },
       { 
+        name: 'subTitulo',
+        type: 'string',
+        title: 'SubTítulo'
+      },
+      { 
+        name: 'local',
+        type: 'string',
+        title: 'Local'
+      },
+      { 
+        name: 'data',
+        type: 'string',
+        title: 'Data'
+      },
+      { 
         name: 'texto',
         type: 'text',
         title: 'Texto'
