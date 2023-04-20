@@ -33,7 +33,7 @@ export function Header({logo}: ImageAsset | any) {
                 <span className={`h-[3px] ${isOpenMenu ? 'w-0' : 'w-[20px]'} bg-black block duration-200`}></span>
                 <span className={`h-[3px] w-[25px] bg-black block ${isOpenMenu ? '-rotate-45 -translate-y-[11px]' : ''} duration-300`}></span>
             </div>
-            <div className={`fixed ${isOpenMenu ? 'top-0 bg-neutral-300/80 backdrop-blur-md bottom-0' : 'top-[-1000px]'} right-0 left-0 top-0 duration-500 ease-in-out px-20 z-40 max-sm:px-10`}>
+            <div className={`fixed ${isOpenMenu ? 'top-0 bg-neutral-300/80 backdrop-blur-md bottom-0' : 'top-[-1000px]'} right-0 left-0 top-0 duration-500 px-20 z-40 max-sm:px-10`}>
                 <ul className='flex gap-6 flex-col mt-[200px] max-w-[1200px] mx-auto'>
                     <li><a href="#" className='text-[24px] font-medium border-b-2 border-yellow-600/50 cursor-pointer py-2 px-2 duration-100 block relative before:w-0 before:h-full before:bg-yellow-500/20 before:absolute before:left-0 before:top-0 hover:before:w-full before:duration-500 before:ease-in-out'>Home</a></li>
                     <li><a href="#" className='text-[24px] font-medium border-b-2 border-yellow-600/50 cursor-pointer py-2 px-2 duration-100 block relative before:w-0 before:h-full before:bg-yellow-500/20 before:absolute before:left-0 before:top-0 hover:before:w-full before:duration-500 before:ease-in-out'>Galeria</a></li>
