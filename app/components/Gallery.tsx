@@ -30,13 +30,14 @@ export default function Gallery({props}: any) {
                 </div>
               </div>
 
-              {index == indexActive  ? 
+              {/* {index == indexActive  ? 
                 <div className="flex mt-10 gap-10 overflow-x-scroll justify-center">
                   {galleryData[index].imagens.map((image: any, index: number) => {
-                    return <Image key={index} src={urlFor(image).url()} onClick={() => setIndexImage(index)} alt="Patrocinadores" width={180} height={180} className="border-2 border-yellow-500 rounded-sm max-sm:w-[200px] aspect-square object-cover"></Image>
+                    console.log(image)
+                    return image ? <Image key={index} src={urlFor(image).url()} onClick={() => setIndexImage(index)} alt="Patrocinadores" width={180} height={180} className="border-2 border-yellow-500 rounded-sm max-sm:w-[200px] aspect-square object-cover" /> : <></>
                   })}
                 </div> 
-              : ''}
+              : ''} */}
             </div>
           )
         }) : ''}
