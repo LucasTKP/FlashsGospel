@@ -55,6 +55,7 @@ function Carrossel({imagens, videos}:any) {
     }
   }
 
+  if(!imagens && !videos) { return <></>}
   return (
     <div className='w-full flex justify-center items-center'>
       <div ref={Ref1} className='group max-w-[900px] max-h-[450px] w-full h-full bg-black flex items-center justify-between relative select-none user-select-none overflow-x-hidden aspect-video'>
@@ -68,8 +69,8 @@ function Carrossel({imagens, videos}:any) {
           } else {
 
             return (
-              <div key={index} className={`z-10 absolute w-full h-full right-0 left-0  duration-500`} style={{left:index === numberCarrossel ? '' : index < numberCarrossel ? -width : width}}>
-                <Image src={urlFor(content).url()} alt='Segunda imagem da Hero Section' width={350} height={250} className='w-full h-full aspect-video' />
+              <div key={index} className={`z-10 absolute w-full h-full right-0 left-0  duration-500 flex justify-center aspect-video`} style={{left:index === numberCarrossel ? '' : index < numberCarrossel ? -width : width}}>
+                <Image src={urlFor(content).url()} alt='Segunda imagem da Hero Section' width={2000} height={2000} className='w-auto h-auto' />
               </div>
             )
           }

@@ -1,9 +1,10 @@
+'use client'
 import { Hero, Partners, Gallery, Jornal, Footer } from "./components"
 import { client } from '@/lib/sanity'
 
 async function getGalleryAndJornalContents() {
   const galleryData: object = await client.fetch(`*[_type == "galeria"]`)
-  const jornalData: object = await client.fetch(`*[_type == "jornal"]`)
+  const jornalData: object = await client.fetch(`*[_type == "jornal"] | order(_createdAt desc) [0..2] `) 
 
   return {galleryData, jornalData}
 }
