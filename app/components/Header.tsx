@@ -13,6 +13,7 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 export function Header({logo}: ImageAsset | any) {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
     const pathname = usePathname();
+    
     const [link, setLinks] = useState([{
         link_instagram: '',
         link_facebook: '',
@@ -28,6 +29,8 @@ export function Header({logo}: ImageAsset | any) {
         getLinks()
     }, [])
 
+    console.log(isOpenMenu)
+    
     return (
         <header className={`flex justify-between py-8 container mx-auto items-center px-5`}>
             {pathname.includes('album') || pathname.includes('jornal')  ? <a className='text-yellow-500 font-semibold text-[18px] flex items-center gap-2' href='/'><ArrowLeftIcon /> Voltar</a> : ''}
@@ -36,7 +39,7 @@ export function Header({logo}: ImageAsset | any) {
                     <Image src={urlFor(logo).url()} alt='logo' width={100} height={100} className='max-sm:w-[80px] max-sm:h-[80px]' />
                 </a>
             </div>
-            <div className={`flex flex-col gap-2 ${isOpenMenu ? 'max-sm:gap-2' : 'max-sm:gap-1'} group cursor-pointer p-2 z-50`} onClick={() => setIsOpenMenu((state) => !state)}>
+            <div className={`z-50 flex flex-col gap-2 ${isOpenMenu ? 'max-sm:gap-2' : 'max-sm:gap-1'} group cursor-pointer p-2 z-50`} onClick={() => setIsOpenMenu((state) => !state)}>
                 <span className={`h-[3px] w-[25px] bg-black block ${isOpenMenu ? 'rotate-45 translate-y-[11px]' : ''} duration-300`}></span>
                 <span className={`h-[3px] ${isOpenMenu ? 'w-0' : 'w-[20px]'} bg-black block duration-200`}></span>
                 <span className={`h-[3px] w-[25px] bg-black block ${isOpenMenu ? '-rotate-45 -translate-y-[11px]' : ''} duration-300`}></span>
