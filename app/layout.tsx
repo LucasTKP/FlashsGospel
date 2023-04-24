@@ -22,7 +22,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`scroll-smooth ${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
       <head />
-      <body>{children}
+      <body>
+        {children}
       </body>
     </html>
   )

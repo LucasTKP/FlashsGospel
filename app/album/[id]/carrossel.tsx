@@ -67,7 +67,7 @@ function Carrossel({videos}:any) {
 
             return (
               <div key={index} className={`z-10 absolute w-full h-full right-0 left-0  duration-500`} style={{left:index === numberCarrossel ? '' : index < numberCarrossel ? -width : width}}>
-                <Image src={urlFor(content).url()} alt='Segunda imagem da Hero Section' width={350} height={250} className='w-full h-full aspect-video' />
+                <Image src={urlFor(content).url()} alt='Segunda imagem da Hero Section' width={2000} height={2000} className='w-full h-full aspect-video' />
               </div>
             )
           }
