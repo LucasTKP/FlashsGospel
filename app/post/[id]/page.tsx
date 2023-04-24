@@ -16,7 +16,6 @@ async function Page(param:any) {
     const heroData = await getHeroDatas()
     const id = param?.params?.id
     const jornalData:JornalData[]  = await client.fetch(`*[_id == "${id}"]`)
-    console.log(jornalData)
     return (
         <section>
             <Header logo={heroData[0].logo}/>
