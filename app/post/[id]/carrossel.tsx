@@ -36,9 +36,6 @@ function Carrossel({imagens, videos}:any) {
         setWidth(Ref1.current?.offsetWidth);
       }
     }
-    window.addEventListener('resize', updateWidth);
-    updateWidth();
-    return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
   function ChangeCarrossel(type:string){
@@ -67,7 +64,6 @@ function Carrossel({imagens, videos}:any) {
               </div>
             )
           } else {
-
             return (
               <div key={index} className={`z-10 absolute w-full h-full right-0 left-0  duration-500 flex justify-center aspect-video`} style={{left:index === numberCarrossel ? '' : index < numberCarrossel ? -width : width}}>
                 <Image src={urlFor(content).url()} alt='Segunda imagem da Hero Section' width={2000} height={2000} className='w-auto h-auto' />
