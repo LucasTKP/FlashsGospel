@@ -20,12 +20,15 @@ export default function Jornal({props}: any) {
                     
                     if(jornal.texto && jornal.foto_escritor && jornal.nome_escritor){
                         return (
-                            <div key={index} className='mb-[15px] flex w-full gap-[20px] max-md:gap-[10px] relative'>
+                            <div key={index} className='mb-[25px] flex w-full gap-[20px] max-md:gap-[10px] relative'>
                                 {
                                     jornal.imagens ?
-                                    <div className='flex max-2xl:max-w-[450px] max-xl:max-w-[400px] max-lg:max-w-[300px] max-md:max-w-[250px] max-sm:max-w-[200px] max-xs:max-w-[150px] aspect-video bg-black justify-center rounded-[4px]'>
-                                        <Image src={urlFor(jornal.imagens[0]).url()} width={2000} height={2000}  alt={'Capa do jornal'} className='w-auto h-auto '/> 
-                                    </div>
+                                    <div className={`flex max-2xl:max-w-[450px] max-xl:max-w-[400px] max-lg:max-w-[300px] max-md:max-w-[250px] max-sm:max-w-[200px] max-xs:max-w-[150px] aspect-video justify-center rounded-[4px] relative`}>
+                                        <Image src={urlFor(jornal.imagens[0]).url()} width={2000} height={2000}  alt={'Capa do jornal'} className='w-auto h-auto '/>
+                                        <div className='w-full h-full absolute z-[-10] bg-black '>
+                                            <Image src={urlFor(jornal.imagens[0]).url()} width={2000} height={2000}  alt={'Capa do jornal'} className='w-full h-full  blur-sm opacity-40'/>
+                                        </div>
+                                    </div> 
                                      
                                 : 
                                     jornal.videos ? <iframe width="100%" height="100%" src={url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className='max-2xl:w-[450px] max-xl:w-[400px] max-lg:w-[300px] max-md:w-[250px] max-sm:w-[200px] max-xs:w-[150px] rounded-[4px] border-black border-[1px] aspect-video' ></iframe> : <></>
@@ -47,8 +50,8 @@ export default function Jornal({props}: any) {
                     }
                 })} 
                 <div className='flex w-full justify-center'>
-                    <Link href={'/jornal'}  className='hover:scale-105 duration-200'>
-                        <p className='text-[25px] text-center font-[500] bg-yellow-200 rounded-[8px] mt-[20px] py-[3px] px-[15px] border-[2px] border-yellow-500'>Ver Mais</p>
+                    <Link href={'/jornal'}  className='hover:brightness-[.95] duration-200'>
+                        <p className='text-[#f3f3f3] text-[22px] text-center font-[400] rounded-[8px] mt-[20px] py-[3px] px-[15px] bg-yellow-500'>Ver Mais</p>
                     </Link >
                 </div>
             </div>
