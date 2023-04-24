@@ -28,8 +28,6 @@ export function Header({logo}: ImageAsset | any) {
 
         getLinks()
     }, [])
-
-    console.log(isOpenMenu)
     
     return (
         <header className={`flex justify-between py-8 container mx-auto items-center px-5`}>

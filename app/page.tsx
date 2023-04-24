@@ -8,6 +8,7 @@ async function getGalleryAndJornalContents() {
   return {galleryData, jornalData}
 }
 
+
 export default async function Home() {
   const {galleryData, jornalData} = await getGalleryAndJornalContents()
 

@@ -1,5 +1,6 @@
 import '../style/global.css'
 import { Castoro, Jost } from 'next/font/google'
+import Head from './head';
 
 const castoro = Castoro({
   variable: '--font-castoro',
@@ -14,6 +15,7 @@ const jost = Jost({
   subsets: ['latin']
 });
 
+
 export default function RootLayout({
   children,
 }: {
@@ -21,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`scroll-smooth ${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
-      <head />
+      <Head />
       <body>
         {children}
       </body>
