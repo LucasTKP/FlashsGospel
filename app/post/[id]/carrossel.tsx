@@ -36,6 +36,9 @@ function Carrossel({imagens, videos}:any) {
         setWidth(Ref1.current?.offsetWidth);
       }
     }
+    window.addEventListener('resize', updateWidth);
+    updateWidth();
+    return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
   function ChangeCarrossel(type:string){

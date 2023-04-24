@@ -13,7 +13,6 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 export function Header({logo}: ImageAsset | any) {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
     const pathname = usePathname();
-    console.log(pathname)
     const [link, setLinks] = useState([{
         link_instagram: '',
         link_facebook: '',
@@ -31,7 +30,7 @@ export function Header({logo}: ImageAsset | any) {
 
     return (
         <header className={`flex justify-between py-8 container mx-auto items-center px-5`}>
-            {pathname.includes('album') ? <a className='text-yellow-500 font-semibold text-[18px] flex items-center gap-2' href='/'><ArrowLeftIcon /> Voltar</a> : ''}
+            {pathname.includes('album') || pathname.includes('jornal')  ? <a className='text-yellow-500 font-semibold text-[18px] flex items-center gap-2' href='/'><ArrowLeftIcon /> Voltar</a> : ''}
             <div className='mx-auto pl-4'>
                 <a href="/">
                     <Image src={urlFor(logo).url()} alt='logo' width={100} height={100} className='max-sm:w-[80px] max-sm:h-[80px]' />

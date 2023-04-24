@@ -13,10 +13,10 @@ export default function Cards({images}: any) {
   return (
     <div className="flex mt-10 gap-10 justify-center max-w-[1000px] flex-wrap">
         {images.map((image: any, index: number) => {
-        return <Image key={index} src={image} alt="Fotos" width={280} height={280} onClick={() => {
-            setPhotoIndex(index)
-            setIsOpen(true)
-        }} className="border-2 border-yellow-500 rounded-sm max-sm:w-[200px] min-h-[400px] object-cover cursor-pointer max-md:min-h-[300px]"></Image>
+        return <Image key={index} src={image} alt="Fotos" width={2800} height={2800} onClick={() => {
+          setPhotoIndex(index)
+          setIsOpen(true)
+        }} className="w-[280px] h-[280px] border-2 border-yellow-500 rounded-sm max-sm:w-[200px] min-h-[400px] object-cover cursor-pointer max-md:min-h-[300px]"></Image>
         })}
 
         {isOpen && (

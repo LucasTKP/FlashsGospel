@@ -21,7 +21,7 @@ export default function Gallery({props}: any) {
                   <div className="flex items-center mx-10 my-6 min-w-[300px] max-xs:min-w-[250px] relative after:bg-yellow-700/30 after:w-full after:h-full after:absolute after:backdrop-blur-sm after:rounded-md hover:after:w-[0px] after:duration-300">
                     <a href={`/album/${post._id}`} className="flex items-center">
                       <p className="absolute z-50 font-medium text-[26px] bg-yellow-600/70 px-4 py-2 w-full text-center text-yellow-400 backdrop-blur-sm cursor-pointer">Ver album</p>
-                      <Image src={urlFor(post.imagens[0]).url()} alt="Gallery images" width={200} height={200} className='w-[300px] h-[400px] rounded-md object-cover max-xs:w-[250px]'></Image>
+                      <Image src={urlFor(post.imagens[0]).url()} alt="Gallery images" width={2000} height={2000} className='w-[300px] h-[400px] rounded-md object-cover max-xs:w-[250px]'></Image>
                     </a>
                   </div>
                 </div>
