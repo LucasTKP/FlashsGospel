@@ -6,6 +6,8 @@ import { ImageAsset } from 'sanity';
 import { useState, useEffect } from 'react';
 import { client } from '@/lib/sanity'
 
+import { ArrowLeftIcon } from '@radix-ui/react-icons'
+
 export function Header({logo}: ImageAsset | any) {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
     const [link, setLinks] = useState([{
@@ -25,8 +27,11 @@ export function Header({logo}: ImageAsset | any) {
 
     return (
         <header className={`flex justify-between py-8 container mx-auto items-center px-5`}>
+            {window.location.href.includes('album') ? <a className='text-yellow-500 font-semibold text-[18px] flex items-center gap-2' href='/'><ArrowLeftIcon /> Voltar</a> : ''}
             <div className='mx-auto pl-4'>
-                <Image src={urlFor(logo).url()} alt='logo' width={100} height={100} className='max-sm:w-[80px] max-sm:h-[80px]' />
+                <a href="/">
+                    <Image src={urlFor(logo).url()} alt='logo' width={100} height={100} className='max-sm:w-[80px] max-sm:h-[80px]' />
+                </a>
             </div>
             <div className={`flex flex-col gap-2 ${isOpenMenu ? 'max-sm:gap-2' : 'max-sm:gap-1'} group cursor-pointer p-2 z-50`} onClick={() => setIsOpenMenu((state) => !state)}>
                 <span className={`h-[3px] w-[25px] bg-black block ${isOpenMenu ? 'rotate-45 translate-y-[11px]' : ''} duration-300`}></span>
