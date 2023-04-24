@@ -1,4 +1,3 @@
-'use client'
 import { Hero, Partners, Gallery, Jornal, Footer } from "./components"
 import { client } from '@/lib/sanity'
 
