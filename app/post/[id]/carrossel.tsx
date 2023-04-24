@@ -58,7 +58,7 @@ function Carrossel({imagens, videos}:any) {
   if(!imagens && !videos) { return <></>}
   return (
     <div className='w-full flex justify-center items-center'>
-      <div ref={Ref1} className='group max-w-[900px] max-h-[450px] w-full h-full bg-black flex items-center justify-between relative select-none user-select-none overflow-x-hidden aspect-video'>
+      <div ref={Ref1} className='group max-w-[900px] w-full h-full bg-black flex items-center justify-between relative select-none user-select-none overflow-x-hidden aspect-video'>
         {content?.map((content:any, index:number) => {
           if(content.type === 'video'){
             return (
@@ -71,6 +71,9 @@ function Carrossel({imagens, videos}:any) {
             return (
               <div key={index} className={`z-10 absolute w-full h-full right-0 left-0  duration-500 flex justify-center aspect-video`} style={{left:index === numberCarrossel ? '' : index < numberCarrossel ? -width : width}}>
                 <Image src={urlFor(content).url()} alt='Segunda imagem da Hero Section' width={2000} height={2000} className='w-auto h-auto' />
+                <div className='w-full h-full absolute z-[-10] bg-black '>
+                  <Image src={urlFor(content).url()} width={2000} height={2000}  alt={'Capa do jornal'} className='w-full h-full  blur-sm opacity-40'/>
+                </div>
               </div>
             )
           }
