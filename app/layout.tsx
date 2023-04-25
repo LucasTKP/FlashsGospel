@@ -23,6 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`scroll-smooth ${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
+      <link rel='icon' type='image/x-icon'  href='/image/favicon.png' sizes='32x32'/>
       <Head />
       <body>
         {children}
