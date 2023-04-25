@@ -26,10 +26,9 @@ export default function Jornal({props}: any) {
                                     <div className={`flex max-2xl:max-w-[450px] max-xl:max-w-[400px] max-lg:max-w-[300px] max-md:max-w-[250px] max-sm:max-w-[200px] max-xs:max-w-[150px] aspect-video justify-center rounded-[4px] relative`}>
                                         <Image src={urlFor(jornal.imagens[0]).url()} width={2000} height={2000}  alt={'Capa do jornal'} className='w-auto h-auto '/>
                                         <div className='w-full h-full absolute z-[-10] bg-black '>
-                                            <Image src={urlFor(jornal.imagens[0]).url()} width={2000} height={2000}  alt={'Capa do jornal'} className='w-full h-full  blur-sm opacity-40'/>
+                                            <Image src={urlFor(jornal.imagens[0]).url()} width={2000} height={2000}  alt={'Capa do jornal'} className='max-2xl:min-w-[450px] max-xl:min-w-[400px] max-lg:min-w-[300px] max-md:min-w-[250px] max-sm:min-w-[200px] max-xs:min-w-[150px] w-full aspect-video blur-sm opacity-40'/>
                                         </div>
-                                    </div> 
-                                     
+                                    </div>  
                                 : 
                                     jornal.videos ? <iframe width="100%" height="100%" src={url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className='max-2xl:w-[450px] max-xl:w-[400px] max-lg:w-[300px] max-md:w-[250px] max-sm:w-[200px] max-xs:w-[150px] rounded-[4px] border-black border-[1px] aspect-video' ></iframe> : <></>
                                 }
