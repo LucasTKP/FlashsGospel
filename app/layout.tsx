@@ -16,6 +16,8 @@ const jost = Jost({
 });
 
 
+export const revalidate = 60
+
 export default function RootLayout({
   children,
 }: {
