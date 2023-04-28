@@ -22,10 +22,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`scroll-smooth ${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
+    <html lang="pt-BR" className={`flex flex-col items-center scroll-smooth ${jost.variable} ${castoro.variable} bg-[#F3F3F3] font-jost`}>
       <link rel='icon' type='image/x-icon'  href='/image/favicon.png' sizes='32x32'/>
       <Head />
-      <body>
+      <body className='max-w-[1920px] w-full'>
         {children}
       </body>
     </html>
